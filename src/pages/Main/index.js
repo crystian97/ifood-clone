@@ -1,29 +1,38 @@
-import React from 'react'
-import  Feather from 'react-native-vector-icons/Feather'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import Principal from '../Principal';
+import React from 'react';
 
-const Tab= createBottomTabNavigator()
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Feather from 'react-native-vector-icons/Feather';
+
+import Principal from '../Principal';
+import Perfil from '../Perfil';
+
+const Tab = createBottomTabNavigator();
+
+
 export default function Main() {
   return (
-    <Tab.Navigator screenOptions={
-      ({routes})=>{
-        tabBarIcon:({focused,color,size})=>{
-          let iconName;
-          if (routes.name =='principal') {
-              iconName ='home'
-          }else if(routes.name ==='perfil'){
-            iconName = 'user'
-          }
-          return <Feather name={iconName} size={size} color={color} />
+    <Tab.Navigator screenOptions={({ route }) => ({
+      tabBarIcon: ({ focused, color, size }) => {
+        let iconName;
+
+        if (route.name === 'Principal') {
+          iconName = 'home';
+        } else if (route.name === 'Perfil') {
+          iconName = 'user';
         }
-      }
-       
-    } tabBarOptions={{
-        activeTintColor:'tomato',
-        inactiveTintColor:'grey'
-    }}>
-      <Tab.Screen name="Principal" component={Principal}/>
+
+        // You can return any component that you like here!
+        return <Feather name={iconName} size={size} color={color} />;
+      },
+
+    })}
+      tabBarOptions={{
+        activeTintColor: 'tomato',
+        inactiveTintColor: 'gray',
+      }}
+    >
+      <Tab.Screen name="Principal" component={Principal} />
+      <Tab.Screen name="Perfil" component={Perfil} />
     </Tab.Navigator>
-  )
+  );
 }
