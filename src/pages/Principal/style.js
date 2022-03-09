@@ -29,14 +29,8 @@ export const ViewPrincipal = styled.ScrollView`
 export const ButtonContainer = styled.View`
   padding: 40px 0;
   flex: 1;
-`;
-export const ButtonContainer = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0 20px 20px 20px;
-`;
+`
+
 export const CategoriaView = styled.ScrollView`
   margin-top: 20px;
   height: 90px;
@@ -66,11 +60,11 @@ export const BannerView = styled.ScrollView`
         margin-top: 20px;
         height: 180px;
         flex-direction: row;
-        width: ${(Dimensions.get('windows').width) -10} px;
+        width: ${(Dimensions.get('window').width) -10} px;
 `
 export const ViewRestaurantes = styled.View`
 justify-content: center;
-margin: 10pz 20px 30px 20px;
+margin: 10px 20px 30px 20px;
 width: ${(Dimensions.get('window').width) -50} px;
 `
 export const TituloRestaurantes = styled.Text `
